@@ -22,6 +22,8 @@ function cacheContents(array $callLogs): array
         }
     }
 
+    ksort($time_records);
+
     foreach ($time_records as $accessed_elements) {
         foreach ($priority_records as $priority_key => &$priority_value) {
             $number_of_occurrence = count(array_filter($accessed_elements, function ($el) use ($priority_key) {
